@@ -1,0 +1,23 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    #https://myaccount.google.com/apppasswords
+    username: "aiaiaiyihao@gmail.com"
+    password: "nost chie jjwi cfxy"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
+server:
+  port: 8091 # The service runs on this port
+
+logging:
+  level:
+    org.springframework.hibernate.sql: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
