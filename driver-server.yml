@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: driver-server # <--- This is the name it registers with in Eureka
+  datasource:
+    url: jdbc:postgresql://localhost:5432/driverservice
+    username: root
+    password: 1234
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8088 # The service runs on this port
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
