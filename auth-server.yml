@@ -1,0 +1,38 @@
+spring:
+  data:
+    redis:
+      #链接本地端口6380因为springboot没有部署在docker内部
+      host: localhost
+      port: 6380
+      password:
+      timeout: 2000ms  # ✅ Added timeout setting for better stability
+      lettuce:
+        pool:
+          enabled: true  # ✅ Ensures pooling is enabled
+          max-active: 8  # 最大连接数
+          max-idle: 8  # 最大空闲连接数
+          min-idle: 0  # 最小空闲连接数
+          max-wait: 100ms  # ⏳ Wait time should be in milliseconds (`100ms`)
+
+  app:
+    jwtSecret: mySECRETKEY11223344qweqwdwqedqsssssssssssssssssssssssss
+    jwtExpirationMs: 300000
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/authservice
+    username: root
+    password: 1234
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8090 # The service runs on this port
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
