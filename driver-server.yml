@@ -14,7 +14,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 server:
-  port: 8088 # The service runs on this port
+  port: 8088 # The service runs on this port.
 
 logging:
   level:
