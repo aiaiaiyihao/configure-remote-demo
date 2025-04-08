@@ -16,7 +16,7 @@ spring:
 
   app:
     jwtSecret: mySECRETKEY11223344qweqwdwqedqsssssssssssssssssssssssss
-    jwtExpirationMs: 3000000000
+    jwtExpirationMs: 300000000
     adminRegistrationCode: 58500558
 
   datasource:
