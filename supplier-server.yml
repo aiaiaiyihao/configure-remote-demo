@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/supplierservice
+    url: jdbc:postgresql://localhost:5431/supplierservice
     username: root
     password: 1234
   jpa:
@@ -9,6 +9,12 @@ spring:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  cache:
+    type: redis  # Tell Spring to use Redis for caching
+  data:
+    redis:
+      host: localhost  # Change to "redis" if running in Docker
+      port: 6388
 
 logging:
   level:
