@@ -12,11 +12,10 @@ spring:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   cache:
-    type: redis  # Tell Spring to use Redis for caching 
-
+    type: redis  # Tell Spring to use Redis for caching
   data:
     redis:
-      host: redis_product  # Change to "redis" if running in Docker
+      host: localhost  # Change to "redis" if running in Docker
       port: 6390
   #
 ##  for finding config server
