@@ -20,7 +20,7 @@ spring:
     adminRegistrationCode: 58500558
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/authservice
+    url: jdbc:postgresql://localhost:5430/authservice
     username: root
     password: 1234
   jpa:
