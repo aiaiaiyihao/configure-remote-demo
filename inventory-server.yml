@@ -1,6 +1,8 @@
 spring:
+  application:
+    name: inventory-server # <--- This is the name it registers with in Eureka
   datasource:
-    url: jdbc:postgresql://localhost:5432/inventoryservice
+    url: jdbc:postgresql://localhost:5429/inventoryservice
     username: root
     password: 1234
   jpa:
@@ -9,6 +11,12 @@ spring:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  cache:
+    type: redis  # Tell Spring to use Redis for caching
+  data:
+    redis:
+      host: localhost  # Change to "redis" if running in Docker
+      port: 6385
 
 server:
   port: 8085 # The service runs on this port
