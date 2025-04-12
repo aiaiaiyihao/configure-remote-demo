@@ -16,7 +16,7 @@ spring:
   data:
     redis:
       host: 127.0.0.1  # Change to "redis" if running in Docker
-      port: 6390
+      port: 6392
   #
 ##  for finding config server
   cloud:
