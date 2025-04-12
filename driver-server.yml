@@ -2,16 +2,26 @@ spring:
   application:
     name: driver-server # <--- This is the name it registers with in Eureka
   datasource:
-    url: jdbc:postgresql://localhost:5432/driverservice
+    url: jdbc:postgresql://localhost:5435/driverservice
     username: root
     password: 1234
   jpa:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-    //update
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  cache:
+    type: redis  # Tell Spring to use Redis for caching
+  data:
+    redis:
+      host: localhost  # Change to "redis" if running in Docker
+      port: 6397
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 server:
   port: 8088 # The service runs on this port.
