@@ -15,7 +15,7 @@ spring:
     type: redis  # Tell Spring to use Redis for caching
   data:
     redis:
-      host: localhost  # Change to "redis" if running in Docker
+      host: 127.0.0.1  # Change to "redis" if running in Docker
       port: 6390
   #
 ##  for finding config server
