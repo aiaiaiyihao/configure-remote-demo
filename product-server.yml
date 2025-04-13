@@ -9,7 +9,7 @@ spring:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create-drop #createdrop
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   cache:
     type: redis  # Tell Spring to use Redis for caching
